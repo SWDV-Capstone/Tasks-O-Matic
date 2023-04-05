@@ -4,7 +4,6 @@
       <ion-menu content-id="main-content" type="overlay">
         <ion-content>
           <ion-list id="inbox-list">
-            <!-- <ion-icon aria-hidden="true" slot="start" :ios="mailOutline" :md="mailSharp"></ion-icon> -->
             <ion-list-header>Tasks-O-Matic</ion-list-header>
             <ion-note>Automating Work Management</ion-note>
 
@@ -16,14 +15,6 @@
             </ion-menu-toggle>
           </ion-list>
 
-          <!-- <ion-list id="labels-list">
-            <ion-list-header>Labels</ion-list-header>
-
-            <ion-item v-for="(label, index) in labels" lines="none" :key="index">
-              <ion-icon aria-hidden="true" slot="start" :ios="bookmarkOutline" :md="bookmarkSharp"></ion-icon>
-              <ion-label>{{ label }}</ion-label>
-            </ion-item>
-          </ion-list> -->
         </ion-content>
       </ion-menu>
       <ion-router-outlet id="main-content"></ion-router-outlet>
@@ -50,18 +41,12 @@ import { ref } from 'vue';
 import {
   archiveOutline,
   archiveSharp,
-  bookmarkOutline,
-  bookmarkSharp,
   heartOutline,
   heartSharp,
   mailOutline,
   mailSharp,
   paperPlaneOutline,
   paperPlaneSharp,
-  trashOutline,
-  trashSharp,
-  warningOutline,
-  warningSharp,
 } from 'ionicons/icons';
 
 const selectedIndex = ref(0);
