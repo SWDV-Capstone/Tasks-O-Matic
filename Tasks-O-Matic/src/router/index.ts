@@ -2,12 +2,29 @@ import { createRouter, createWebHistory } from '@ionic/vue-router';
 import { RouteRecordRaw } from 'vue-router';
 
 const routes: Array<RouteRecordRaw> = [
+  // {
+  //   path: '',
+  //   redirect: '/views/pages'
+  // },
   {
-    path: '',
-    redirect: '/folder/Inbox'
+    path: '/views/:id',
+    component: () => import ('../views/GroupsPage.vue')
   },
   {
-    path: '/folder/:id',
+    path: '/views/ItemsPage',
+    component: () => import ('../views/ItemsPage.vue')
+  },
+  {
+    path: '/views/:id',
+    component: () => import ('../views/TaskGroupsPage.vue')
+  },
+  {
+    path: '/views/:id',
+    component: () => import ('../views/ReportsPage.vue')
+  },
+
+  {
+    path: '/views/:id',
     component: () => import ('../views/FolderPage.vue')
   }
 ]

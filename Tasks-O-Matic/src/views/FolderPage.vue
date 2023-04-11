@@ -6,14 +6,14 @@
         <ion-buttons slot="start">
           <ion-menu-button color="primary"></ion-menu-button>
         </ion-buttons>
-        <ion-title>Your {{ $route.params.id }}</ion-title>
+        <ion-title>Your XXX {{ $route.params.id }}</ion-title>
       </ion-toolbar>
     </ion-header>
 
     <ion-content :fullscreen="true">
       <ion-header collapse="condense">
         <ion-toolbar>
-          <ion-title size="large">Your {{ $route.params.id }}</ion-title>
+          <ion-title size="large">Your XXX{{ $route.params.id }}</ion-title>
         </ion-toolbar>
       </ion-header>
 

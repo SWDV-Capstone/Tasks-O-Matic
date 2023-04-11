@@ -3,7 +3,7 @@
     <ion-split-pane content-id="main-content">
       <ion-menu content-id="main-content" type="overlay">
         <ion-content>
-          <ion-list id="inbox-list">
+          <ion-list id="pages-list">
             <ion-list-header>Tasks-O-Matic</ion-list-header>
             <ion-note>Automating Work Management</ion-note>
 
@@ -17,7 +17,9 @@
 
         </ion-content>
       </ion-menu>
+
       <ion-router-outlet id="main-content"></ion-router-outlet>
+
     </ion-split-pane>
   </ion-app>
 </template>
@@ -47,50 +49,42 @@ import {
   mailSharp,
   paperPlaneOutline,
   paperPlaneSharp,
+  trashOutline,
+  trashSharp,
 } from 'ionicons/icons';
 
 const selectedIndex = ref(0);
 const appPages = [
   {
+    // id: '01',
     title: 'Groups',
-    url: '/folder/Groups',
+    url: '/views/Groups Page',
     iosIcon: mailOutline,
     mdIcon: mailSharp,
   },
   {
+    // id: '02',
     title: 'Task Items',
-    url: '/folder/Task Items',
+    url: '/views/Task Items Page',
     iosIcon: paperPlaneOutline,
     mdIcon: paperPlaneSharp,
   },
   {
-    title: 'Task Groups',
-    url: '/folder/Task Groups',
-    iosIcon: heartOutline,
-    mdIcon: heartSharp,
-  },
-  {
     title: 'Reports',
-    url: '/folder/Reports',
+    url: '/views/Reports Page',
     iosIcon: archiveOutline,
     mdIcon: archiveSharp,
   },
-  // {
-  //   title: 'Settings',
-  //   url: '/folder/Trash',
-  //   iosIcon: trashOutline,
-  //   mdIcon: trashSharp,
-  // },
-  // {
-  //   title: 'Help',
-  //   url: '/folder/Spam',
-  //   iosIcon: warningOutline,
-  //   mdIcon: warningSharp,
-  // },
+  {
+    title: 'Folder',
+    url: '/views/Folder Page',
+    iosIcon: trashOutline,
+    mdIcon: trashSharp,
+  },
 ];
 // const labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
-const path = window.location.pathname.split('folder/')[1];
+const path = window.location.pathname.split('views/')[0];
 if (path !== undefined) {
   selectedIndex.value = appPages.findIndex((page) => page.title.toLowerCase() === path.toLowerCase());
 }
@@ -121,11 +115,11 @@ ion-menu.md ion-note {
   padding-left: 10px;
 }
 
-ion-menu.md ion-list#inbox-list {
+ion-menu.md ion-list#pages-list {
   border-bottom: 1px solid var(--ion-color-step-150, #d7d8da);
 }
 
-ion-menu.md ion-list#inbox-list ion-list-header {
+ion-menu.md ion-list#pages-list ion-list-header {
   font-size: 22px;
   font-weight: 600;
 
