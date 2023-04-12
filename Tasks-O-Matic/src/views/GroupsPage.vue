@@ -5,7 +5,7 @@
                 <ion-buttons slot="start">
                     <ion-menu-button color="primary"></ion-menu-button>
                 </ion-buttons>
-                <ion-title>Your {{ $route.params.id }}</ion-title>
+                <ion-title>Your GG {{ $route.params.id }}</ion-title>
             </ion-toolbar>
         </ion-header>
 

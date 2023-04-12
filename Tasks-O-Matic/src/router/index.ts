@@ -2,31 +2,36 @@ import { createRouter, createWebHistory } from '@ionic/vue-router';
 import { RouteRecordRaw } from 'vue-router';
 
 const routes: Array<RouteRecordRaw> = [
-  // {
-  //   path: '',
-  //   redirect: '/views/pages'
-  // },
   {
-    path: '/views/:id',
-    component: () => import ('../views/GroupsPage.vue')
+    path: '/',
+    redirect: '/views/pages'
   },
   {
-    path: '/views/ItemsPage',
-    component: () => import ('../views/ItemsPage.vue')
+    path: '/views/',
+    component: Views,
+    children: [
+      {
+        path: '/views/:id',
+        component: () => import ('@/views/GroupsPage.vue')
+      },
+      {
+        path: '/views/:id',
+        component: () => import ('@/views/ItemsPage.vue')
+      },
+      {
+        path: '/views/:id',
+        component: () => import ('@/views/TaskGroupsPage.vue')
+      },
+      {
+        path: '/views/:id',
+        component: () => import ('@/views/ReportsPage.vue')
+      },
+      {
+        path: '/views/:id',
+        component: () => import ('@/views/FolderPage.vue')
+      },
+    ],
   },
-  {
-    path: '/views/:id',
-    component: () => import ('../views/TaskGroupsPage.vue')
-  },
-  {
-    path: '/views/:id',
-    component: () => import ('../views/ReportsPage.vue')
-  },
-
-  {
-    path: '/views/:id',
-    component: () => import ('../views/FolderPage.vue')
-  }
 ]
 
 const router = createRouter({

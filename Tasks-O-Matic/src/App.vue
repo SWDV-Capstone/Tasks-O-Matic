@@ -53,7 +53,7 @@ import {
   trashSharp,
 } from 'ionicons/icons';
 
-const selectedIndex = ref(0);
+const selectedIndex = ref(1);
 const appPages = [
   {
     // id: '01',
@@ -84,7 +84,7 @@ const appPages = [
 ];
 // const labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
-const path = window.location.pathname.split('views/')[0];
+const path = window.location.pathname.split('views/')[1];
 if (path !== undefined) {
   selectedIndex.value = appPages.findIndex((page) => page.title.toLowerCase() === path.toLowerCase());
 }
