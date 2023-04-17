@@ -3,34 +3,32 @@ import { RouteRecordRaw } from 'vue-router';
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: '/',
-    redirect: '/views/pages'
+    path: '',
+    redirect: '/folder/Pages'
   },
   {
-    path: '/views/',
-    component: Views,
-    children: [
-      {
-        path: '/views/:id',
-        component: () => import ('@/views/GroupsPage.vue')
-      },
-      {
-        path: '/views/:id',
-        component: () => import ('@/views/ItemsPage.vue')
-      },
-      {
-        path: '/views/:id',
-        component: () => import ('@/views/TaskGroupsPage.vue')
-      },
-      {
-        path: '/views/:id',
-        component: () => import ('@/views/ReportsPage.vue')
-      },
-      {
-        path: '/views/:id',
-        component: () => import ('@/views/FolderPage.vue')
-      },
-    ],
+    path: '/Groups/:id',
+    component: () => import('../views/GroupsPage.vue')
+  },
+  {
+    path: '/TaskItems/:id',
+    component: () => import('../views/ItemsPage.vue')
+  },
+  {
+    path: '/TaskGroups/:id',
+    component: () => import('../views/TaskGroupsPage.vue')
+  },
+  {
+    path: '/Reports/:id',
+    component: () => import('../views/ReportsPage.vue')
+  },
+  // {
+  //   path: '/folder/:id',
+  //   component: () => import('../views/ReportsPage.vue'),
+  // },
+  {
+    path: '/Login/:id',
+    component: () => import('../views/LoginPage.vue')
   },
 ]
 

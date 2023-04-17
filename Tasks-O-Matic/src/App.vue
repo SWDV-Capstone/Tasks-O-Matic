@@ -8,7 +8,7 @@
             <ion-note>Automating Work Management</ion-note>
 
             <ion-menu-toggle :auto-hide="false" v-for="(p, i) in appPages" :key="i">
-              <ion-item @click="selectedIndex = i" router-direction="root" :router-link="p.url" lines="none" :detail="false" class="hydrated" :class="{ selected: selectedIndex === i }">
+              <ion-item @click="selectedIndex = i" :router-link="p.url" lines="none" :detail="false" class="hydrated" :class="{ selected: selectedIndex === i }">
                 <ion-icon aria-hidden="true" slot="start" :ios="p.iosIcon" :md="p.mdIcon"></ion-icon>
                 <ion-label>{{ p.title }}</ion-label>
               </ion-item>
@@ -17,9 +17,7 @@
 
         </ion-content>
       </ion-menu>
-
       <ion-router-outlet id="main-content"></ion-router-outlet>
-
     </ion-split-pane>
   </ion-app>
 </template>
@@ -53,38 +51,41 @@ import {
   trashSharp,
 } from 'ionicons/icons';
 
-const selectedIndex = ref(1);
+const selectedIndex = ref(0);
 const appPages = [
-  {
-    // id: '01',
-    title: 'Groups',
-    url: '/views/Groups Page',
+{
+    title: 'Task Groups',
+    url: '/TaskGroups/Task Groups',
     iosIcon: mailOutline,
     mdIcon: mailSharp,
   },
   {
-    // id: '02',
+    title: 'Groups',
+    url: '/Groups/Groups',
+    iosIcon: mailOutline,
+    mdIcon: mailSharp,
+  },
+  {
     title: 'Task Items',
-    url: '/views/Task Items Page',
-    iosIcon: paperPlaneOutline,
-    mdIcon: paperPlaneSharp,
+    url: '/TaskItems/Task Items',
+    iosIcon: mailOutline,
+    mdIcon: mailSharp,
   },
   {
-    title: 'Reports',
-    url: '/views/Reports Page',
-    iosIcon: archiveOutline,
-    mdIcon: archiveSharp,
+    title: 'Task Reports',
+    url: '/Reports/Reports',
+    iosIcon: mailOutline,
+    mdIcon: mailSharp,
   },
   {
-    title: 'Folder',
-    url: '/views/Folder Page',
-    iosIcon: trashOutline,
-    mdIcon: trashSharp,
+    title: 'Login',
+    url: '/Login/Login',
+    iosIcon: mailOutline,
+    mdIcon: mailSharp,
   },
 ];
-// const labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
-const path = window.location.pathname.split('views/')[1];
+const path = window.location.pathname.split('folder/')[1];
 if (path !== undefined) {
   selectedIndex.value = appPages.findIndex((page) => page.title.toLowerCase() === path.toLowerCase());
 }

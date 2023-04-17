@@ -1,34 +1,35 @@
 <template>
-    <ion-page>
-        <ion-header :translucent="true">
+  <ion-page>
+    <ion-header :translucent="true">
+      <ion-toolbar>
+        <ion-img src="../favicon.png" style="max-width: 5%" slot="start" />
+        <ion-title>Your {{ $route.params.id }}</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content :fullscreen="true">
+        <!-- <ion-header collapse="condense">
             <ion-toolbar>
-                <ion-buttons slot="start">
-                    <ion-menu-button color="primary"></ion-menu-button>
-                </ion-buttons>
-                <ion-title>Your GG {{ $route.params.id }}</ion-title>
+              <ion-img src="../favicon.png" style="max-width: 5%" slot="start" />
+              <ion-title size="large">Your {{ $route.params.id }}</ion-title>
             </ion-toolbar>
-        </ion-header>
+        </ion-header> -->
 
-        <ion-content :fullscreen="true">
-            <!-- <ion-header collapse="condense">
-                <ion-toolbar>
-                <ion-title size="large">Your {{ $route.params.id }}</ion-title>
-                </ion-toolbar>
-            </ion-header> -->
+        <ion-content>
+        <ion-card v-for="(g, i) in groups" :key="i">
+          <ion-card-header>
+            <ion-card-title>{{ g.title }}</ion-card-title>
+            <ion-card-subtitle>{{ g.desc }}</ion-card-subtitle>
+          </ion-card-header>
 
-            <ion-card>
-                <ion-card-header>
-                <ion-card-title>Group Title</ion-card-title>
-                <ion-card-subtitle>Group Description</ion-card-subtitle>
-                </ion-card-header>
+          <ion-card-content>
+              <!-- {{ r.somethingElse }} -->
+          </ion-card-content>
+        </ion-card>
+      </ion-content>
 
-                <ion-card-content>
-                    Task Items picker goes here
-                </ion-card-content>
-            </ion-card>
-
-        </ion-content>
-    </ion-page>
+    </ion-content>
+  </ion-page>
 </template>
 
 <script setup lang="ts">
@@ -44,23 +45,16 @@ import {
   IonCardHeader, 
   IonCardSubtitle, 
   IonCardTitle,
-  IonList,
-  IonItem,
-  IonItemOptions,
-  IonItemOption,
-  IonItemSliding,
-  IonLabel,
-  IonCheckbox,
-  IonIcon,
-  IonToolbar, 
-  IonAccordion, 
-  IonAccordionGroup, 
+  IonToolbar,
+  IonImg, 
 } from '@ionic/vue';
-import { ref } from 'vue';
-import {
-  starOutline,
-  starSharp,
-} from 'ionicons/icons';
+
+const groups= [
+  {title: 'Group 1', desc: 'Group 1 Description'},
+  {title: 'Group 2', desc: 'Group 2 Description'},
+  {title: 'Group 3', desc: 'Group 3 Description'},
+  {title: 'Group 4', desc: 'Group 4 Description'},
+]
 </script>
 
 <style scoped>
