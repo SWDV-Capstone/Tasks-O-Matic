@@ -20,7 +20,7 @@
 
 <script setup lang="ts">
 import Header from '@/components/PageHeader.vue'
-import { items } from '../stores/ItemsStore.js'
+// import { items } from '../stores/ItemsStore.js'
 
 
 import { 
@@ -33,12 +33,12 @@ import {
     IonCardContent,
 } from '@ionic/vue';
 
-// const items= [
-//   {title: 'Item 1', desc: 'Task Item 1 Description'},
-//   {title: 'Item 2', desc: 'Task Item 2 Description'},
-//   {title: 'Item 3', desc: 'Task Item 3 Description'},
-//   {title: 'Item 4', desc: 'Task Item 4 Description'},
-// ]
+const items= [
+  {title: 'Item 1', desc: 'Task Item 1 Description'},
+  {title: 'Item 2', desc: 'Task Item 2 Description'},
+  {title: 'Item 3', desc: 'Task Item 3 Description'},
+  {title: 'Item 4', desc: 'Task Item 4 Description'},
+]
 </script>
   
 <style scoped>

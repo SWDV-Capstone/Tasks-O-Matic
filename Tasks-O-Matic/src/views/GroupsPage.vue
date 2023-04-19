@@ -20,7 +20,7 @@
 
 <script setup lang="ts">
 import Header from '@/components/PageHeader.vue'
-import { groups } from '../stores/GroupsStore.js'
+// import { groups } from '../stores/GroupsStore.js'
 
 
 import { 
@@ -40,12 +40,12 @@ import {
   IonLabel,
 } from '@ionic/vue';
 
-// const groups= [
-//   {title: 'Group 1', desc: 'Group 1 Description'},
-//   {title: 'Group 2', desc: 'Group 2 Description'},
-//   {title: 'Group 3', desc: 'Group 3 Description'},
-//   {title: 'Group 4', desc: 'Group 4 Description'},
-// ]
+const groups= [
+  {title: 'Group 1', desc: 'Group 1 Description'},
+  {title: 'Group 2', desc: 'Group 2 Description'},
+  {title: 'Group 3', desc: 'Group 3 Description'},
+  {title: 'Group 4', desc: 'Group 4 Description'},
+]
 </script>
 
 <style scoped>

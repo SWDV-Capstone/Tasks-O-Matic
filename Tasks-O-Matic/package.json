@@ -2,7 +2,7 @@
   "name": "Tasks-O-Matic",
   "private": true,
   "version": "0.0.1",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
