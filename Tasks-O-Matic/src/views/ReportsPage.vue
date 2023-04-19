@@ -1,50 +1,33 @@
 <template>
   <ion-page>
-    <ion-header :translucent="true">
-      <ion-toolbar>
-        <ion-img src="../favicon.png" style="max-width: 5%" slot="start" />
-        <ion-title>Your {{ $route.params.id }}</ion-title>
-      </ion-toolbar>
-    </ion-header>
+    <Header></Header>
+    <ion-content>
+      <ion-card v-for="(r, i) in reports" :key="i">
+        <ion-card-header>
+          <ion-card-title>{{ r.title }}</ion-card-title>
+          <ion-card-subtitle>{{ r.desc }}</ion-card-subtitle>
+        </ion-card-header>
 
-    <ion-content :fullscreen="true">
-      <!-- <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-img src="../favicon.png" style="max-width: 5%" slot="start" />
-          <ion-title size="large">Your {{ $route.params.id }}</ion-title>
-        </ion-toolbar>
-      </ion-header> -->
-
-      <ion-content>
-        <ion-card v-for="(r, i) in reports" :key="i">
-          <ion-card-header>
-            <ion-card-title>{{ r.title }}</ion-card-title>
-            <ion-card-subtitle>{{ r.desc }}</ion-card-subtitle>
-          </ion-card-header>
-
-          <ion-card-content>
-              <!-- {{ r.somethingElse }} -->
-          </ion-card-content>
-        </ion-card>
-      </ion-content>
-    
+        <ion-card-content>
+            <!-- {{ r.somethingElse }} -->
+        </ion-card-content>
+      </ion-card>
     </ion-content>
+    
   </ion-page>
 </template>
 
 <script setup lang="ts">
+import Header from '@/components/PageHeader.vue'
+
 import { 
   IonCard,
   IonCardContent,
   IonCardHeader,
   IonCardSubtitle,
   IonCardTitle, 
-  IonImg,
   IonContent, 
-  IonHeader, 
   IonPage, 
-  IonTitle,
-  IonToolbar, 
 } from '@ionic/vue';
 
 const reports= [

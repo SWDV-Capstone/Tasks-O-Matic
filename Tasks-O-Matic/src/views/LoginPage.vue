@@ -1,11 +1,11 @@
 <template>
     <ion-page>
         <ion-header :translucent="true">
-      <ion-toolbar>
-        <ion-img src="../favicon.png" style="max-width: 5%" slot="start" />
-        <ion-title>Tasks-O-Matic</ion-title>
-      </ion-toolbar>
-    </ion-header>
+            <ion-toolbar>
+                <ion-img src="../favicon.png" style="max-width: 5%" slot="start" />
+                <ion-title>Tasks-O-Matic</ion-title>
+            </ion-toolbar>
+        </ion-header>
 
         <ion-content>
             <ion-label>Enter Username and Password to Login</ion-label>
@@ -63,24 +63,28 @@ import {
     text-decoration: none;
 }
 ion-content.md {
-    --padding-start: 10px;
-    --padding-end: 10px;
-    border-radius: 4px;
+  --padding-start: 10px;
+  --padding-end: 10px;
+  --padding-top: 10px;
+  --padding-bottom: 10px;
 }
 ion-toolbar.md {
-    --padding-start: 10px;
-    --padding-end: 10px;
-    border-radius: 4px;
+  --padding-start: 10px;
+  --padding-end: 10px;
+  --padding-top: 10px;
+  --padding-bottom: 10px;
 }
 ion-content.ios {
-    --padding-start: 10px;
-    --padding-end: 10px;
-    border-radius: 4px;
+  --padding-start: 10px;
+  --padding-end: 10px;
+  --padding-top: 10px;
+  --padding-bottom: 10px;
 }
 
 ion-toolbar.ios {
-    --padding-start: 10px;
-    --padding-end: 10px;
-    border-radius: 4px;
+  --padding-start: 10px;
+  --padding-end: 10px;
+  --padding-top: 10px;
+  --padding-bottom: 10px;
 }
 </style>

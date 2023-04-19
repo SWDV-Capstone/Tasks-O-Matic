@@ -1,20 +1,7 @@
 <template>
   <ion-page>
-    <ion-header :translucent="true">
-      <ion-toolbar>
-        <ion-img src="../favicon.png" style="max-width: 5%" slot="start" />
-        <ion-title>Your {{ $route.params.id }}</ion-title>
-      </ion-toolbar>
-    </ion-header>
-
-    <ion-content :fullscreen="true">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-img src="../favicon.png" style="max-width: 5%" slot="start" />
-          <ion-title size="large">Your {{ $route.params.id }}</ion-title>
-        </ion-toolbar>
-      </ion-header>
-
+    <Header></Header>
+    <ion-content>
       <ion-accordion-group>
         <ion-accordion  v-for="(tg, i) in taskGroups" :key="i">
 
@@ -53,6 +40,9 @@
 </template>
   
   <script setup lang="ts">
+  import Header from '@/components/PageHeader.vue'
+  import { taskGroups } from '../stores/TaskGroupsStore.js'
+
   import { 
     IonButtons, 
     IonContent, 
@@ -78,87 +68,6 @@
     starOutline,
     starSharp,
   } from 'ionicons/icons';
-  
-  const taskGroups = [
-    {
-      title: 'Wash Car',
-      tasks: [
-        {text: 'Clean interior', completed: true, due: '2021-08-01', priority: true, complete: true },
-        {text: 'Vaccume all rugs', completed: true, due: '2021-08-01', priority: true, complete: true },
-      ],
-      complete: true,
-    },
-    {
-      title: 'Buy Groceries',
-      tasks: [
-        {text: 'Chicken', completed: false, due: '2021-08-10', priority: false, complete: false},
-        {text: 'Milk', completed: true, due: '2021-08-10', priority: false, complete: true},
-        {text: 'Bread', completed: false, due: '2021-08-10', priority: false, complete: false},
-      ],
-      complete: false,
-    },
-    {
-      title: 'Study for Exam',
-      tasks: [
-        {text: 'Read text', completed: true, due: '2021-12-010', priority: true, complete: false},
-        {text: 'Practice', completed: true, due: '2021-12-010', priority: true, complete: false},
-        {text: 'Sleep early', completed: false, due: '2021-12-010', priority: true, complete: false},
-      ],
-      complete: false,
-    },
-    {
-      title: 'Infinite scroll',
-      tasks: [
-        {text: 'Read text', completed: true, due: '2021-12-010', priority: true, complete: false},
-        {text: 'Practice', completed: true, due: '2021-12-010', priority: true, complete: false},
-        {text: 'Sleep early', completed: false, due: '2021-12-010', priority: true, complete: false},
-        {text: 'Read text', completed: true, due: '2021-12-010', priority: true, complete: false},
-        {text: 'Practice', completed: true, due: '2021-12-010', priority: true, complete: false},
-        {text: 'Sleep early', completed: false, due: '2021-12-010', priority: true, complete: false},
-        {text: 'Read text', completed: true, due: '2021-12-010', priority: true, complete: false},
-        {text: 'Practice', completed: true, due: '2021-12-010', priority: true, complete: false},
-        {text: 'Sleep early', completed: false, due: '2021-12-010', priority: true, complete: false},
-        {text: 'Read text', completed: true, due: '2021-12-010', priority: true, complete: false},
-        {text: 'Practice', completed: true, due: '2021-12-010', priority: true, complete: false},
-        {text: 'Sleep early', completed: false, due: '2021-12-010', priority: true, complete: false},
-        {text: 'Read text', completed: true, due: '2021-12-010', priority: true, complete: false},
-        {text: 'Practice', completed: true, due: '2021-12-010', priority: true, complete: false},
-        {text: 'Sleep early', completed: false, due: '2021-12-010', priority: true, complete: false},
-        {text: 'Read text', completed: true, due: '2021-12-010', priority: true, complete: false},
-        {text: 'Practice', completed: true, due: '2021-12-010', priority: true, complete: false},
-        {text: 'Sleep early', completed: false, due: '2021-12-010', priority: true, complete: false},
-        {text: 'Read text', completed: true, due: '2021-12-010', priority: true, complete: false},
-        {text: 'Practice', completed: true, due: '2021-12-010', priority: true, complete: false},
-        {text: 'Sleep early', completed: false, due: '2021-12-010', priority: true, complete: false},
-        {text: 'Read text', completed: true, due: '2021-12-010', priority: true, complete: false},
-        {text: 'Practice', completed: true, due: '2021-12-010', priority: true, complete: false},
-        {text: 'Sleep early', completed: false, due: '2021-12-010', priority: true, complete: false},
-        {text: 'Read text', completed: true, due: '2021-12-010', priority: true, complete: false},
-        {text: 'Practice', completed: true, due: '2021-12-010', priority: true, complete: false},
-        {text: 'Sleep early', completed: false, due: '2021-12-010', priority: true, complete: false},
-        {text: 'Read text', completed: true, due: '2021-12-010', priority: true, complete: false},
-        {text: 'Practice', completed: true, due: '2021-12-010', priority: true, complete: false},
-        {text: 'Sleep early', completed: false, due: '2021-12-010', priority: true, complete: false},
-        {text: 'Read text', completed: true, due: '2021-12-010', priority: true, complete: false},
-        {text: 'Practice', completed: true, due: '2021-12-010', priority: true, complete: false},
-        {text: 'Sleep early', completed: false, due: '2021-12-010', priority: true, complete: false},
-        {text: 'Read text', completed: true, due: '2021-12-010', priority: true, complete: false},
-        {text: 'Practice', completed: true, due: '2021-12-010', priority: true, complete: false},
-        {text: 'Sleep early', completed: false, due: '2021-12-010', priority: true, complete: false},
-        {text: 'Read text', completed: true, due: '2021-12-010', priority: true, complete: false},
-        {text: 'Practice', completed: true, due: '2021-12-010', priority: true, complete: false},
-        {text: 'Sleep early', completed: false, due: '2021-12-010', priority: true, complete: false},
-        {text: 'Read text', completed: true, due: '2021-12-010', priority: true, complete: false},
-        {text: 'Practice', completed: true, due: '2021-12-010', priority: true, complete: false},
-        {text: 'Sleep early', completed: false, due: '2021-12-010', priority: true, complete: false},
-        {text: 'Read text', completed: true, due: '2021-12-010', priority: true, complete: false},
-        {text: 'Practice', completed: true, due: '2021-12-010', priority: true, complete: false},
-        {text: 'Sleep early', completed: false, due: '2021-12-010', priority: true, complete: false},
-  
-      ],
-      complete: false,
-    }
-  ]
   </script>
   
   <style scoped>

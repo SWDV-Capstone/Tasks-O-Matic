@@ -1,38 +1,28 @@
 <template>
   <ion-page>
-    <ion-header :translucent="true">
-      <ion-toolbar>
-        <ion-img src="../favicon.png" style="max-width: 5%" slot="start" />
-        <ion-title>Your {{ $route.params.id }}</ion-title>
-      </ion-toolbar>
-    </ion-header>
+    <Header></Header>
 
-    <ion-content :fullscreen="true">
-        <!-- <ion-header collapse="condense">
-            <ion-toolbar>
-              <ion-img src="../favicon.png" style="max-width: 5%" slot="start" />
-              <ion-title size="large">Your {{ $route.params.id }}</ion-title>
-            </ion-toolbar>
-        </ion-header> -->
+    <ion-content>
 
-        <ion-content>
-        <ion-card v-for="(g, i) in groups" :key="i">
-          <ion-card-header>
-            <ion-card-title>{{ g.title }}</ion-card-title>
-            <ion-card-subtitle>{{ g.desc }}</ion-card-subtitle>
-          </ion-card-header>
-
+      <ion-card v-for="(g, i) in groups" :key="i">
+        <ion-card-header>
+          <ion-card-title>{{ g.title }}</ion-card-title>
+          <ion-card-subtitle>{{ g.desc }}</ion-card-subtitle>
+        </ion-card-header>
           <ion-card-content>
-              <!-- {{ r.somethingElse }} -->
+              <!-- {{ g.somethingElse }} -->
           </ion-card-content>
-        </ion-card>
-      </ion-content>
+      </ion-card>
 
     </ion-content>
   </ion-page>
 </template>
 
 <script setup lang="ts">
+import Header from '@/components/PageHeader.vue'
+import { groups } from '../stores/GroupsStore.js'
+
+
 import { 
   IonButtons, 
   IonContent, 
@@ -46,15 +36,16 @@ import {
   IonCardSubtitle, 
   IonCardTitle,
   IonToolbar,
-  IonImg, 
+  IonImg,
+  IonLabel,
 } from '@ionic/vue';
 
-const groups= [
-  {title: 'Group 1', desc: 'Group 1 Description'},
-  {title: 'Group 2', desc: 'Group 2 Description'},
-  {title: 'Group 3', desc: 'Group 3 Description'},
-  {title: 'Group 4', desc: 'Group 4 Description'},
-]
+// const groups= [
+//   {title: 'Group 1', desc: 'Group 1 Description'},
+//   {title: 'Group 2', desc: 'Group 2 Description'},
+//   {title: 'Group 3', desc: 'Group 3 Description'},
+//   {title: 'Group 4', desc: 'Group 4 Description'},
+// ]
 </script>
 
 <style scoped>

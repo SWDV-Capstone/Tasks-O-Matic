@@ -13,8 +13,8 @@
                 <ion-label>{{ p.title }}</ion-label>
               </ion-item>
             </ion-menu-toggle>
+            
           </ion-list>
-
         </ion-content>
       </ion-menu>
       <ion-router-outlet id="main-content"></ion-router-outlet>
@@ -23,6 +23,7 @@
 </template>
 
 <script setup lang="ts">
+
 import {
   IonApp,
   IonContent,
@@ -80,6 +81,12 @@ const appPages = [
   {
     title: 'Login',
     url: '/Login/Login',
+    iosIcon: mailOutline,
+    mdIcon: mailSharp,
+  },
+  {
+    title: 'Test Page',
+    url: '/Test/Test',
     iosIcon: mailOutline,
     mdIcon: mailSharp,
   },
@@ -211,4 +218,5 @@ ion-note {
 ion-item.selected {
   --color: var(--ion-color-primary);
 }
+
 </style>

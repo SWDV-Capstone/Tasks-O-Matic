@@ -22,13 +22,13 @@ const routes: Array<RouteRecordRaw> = [
     path: '/Reports/:id',
     component: () => import('../views/ReportsPage.vue')
   },
-  // {
-  //   path: '/folder/:id',
-  //   component: () => import('../views/ReportsPage.vue'),
-  // },
   {
     path: '/Login/:id',
     component: () => import('../views/LoginPage.vue')
+  },
+  {
+    path: '/Test/:id',
+    component: () => import('../views/TestPage.vue'),
   },
 ]
 
