@@ -1,5 +1,5 @@
 {
-  "name": "Tasks-O-Matic",
+  "name": "tasks-o-matic",
   "private": true,
   "version": "0.0.1",
   "type": "commonjs",
@@ -12,11 +12,13 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@capacitor/app": "4.1.1",
-    "@capacitor/core": "4.7.3",
-    "@capacitor/haptics": "4.1.0",
-    "@capacitor/keyboard": "4.1.1",
-    "@capacitor/status-bar": "4.1.1",
+    "@capacitor/android": "next",
+    "@capacitor/app": "next",
+    "@capacitor/core": "next",
+    "@capacitor/haptics": "next",
+    "@capacitor/ios": "next",
+    "@capacitor/keyboard": "next",
+    "@capacitor/status-bar": "next",
     "@ionic/vue": "^7.0.0",
     "@ionic/vue-router": "^7.0.0",
     "ionicons": "^7.0.0",
@@ -25,7 +27,7 @@
     "vue-router": "^4.1.6"
   },
   "devDependencies": {
-    "@capacitor/cli": "4.7.3",
+    "@capacitor/cli": "next",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vue/eslint-config-typescript": "^11.0.2",
     "@vue/test-utils": "^2.3.0",

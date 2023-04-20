@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "Tasks-O-Matic",
+	"webDir": "dist",
+	"bundledWebRuntime": false
+}
