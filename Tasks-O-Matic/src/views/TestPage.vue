@@ -9,7 +9,7 @@
 
 <script setup lang="ts">
 import Header from '../components/PageHeader.vue'
-import { store } from '../stores/store.js'
+import { store } from '../stores/TestStore.js'
 
 import { 
   IonButtons,
