@@ -15,7 +15,7 @@
           <ion-list :fullscreen="true" class="ion-padding" slot="content" v-for="(t, i) in tg.tasks" :key="i">
             <ion-item-sliding>
               <ion-item>
-                <input type="checkbox" slot="end" v-model="t.complete">
+                <input type="checkbox" slot="end" v-model="t.complete" />
                 <ion-label>
                   {{ t.text }}
                 </ion-label>
@@ -44,13 +44,8 @@
   import { taskGroups } from '../stores/TaskGroupsStore.js'
 
   import { 
-    IonButtons, 
     IonContent, 
-    IonHeader, 
-    IonMenuButton, 
     IonPage,
-    IonImg, 
-    IonTitle,
     IonList,
     IonItem,
     IonItemOptions,
@@ -59,10 +54,8 @@
     IonLabel,
     IonCheckbox,
     IonIcon,
-    IonToolbar, 
     IonAccordion, 
     IonAccordionGroup,
-    IonCard,
   } from '@ionic/vue';
   import {
     starOutline,

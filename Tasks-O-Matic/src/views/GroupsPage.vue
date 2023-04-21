@@ -24,20 +24,13 @@ import Header from '@/components/PageHeader.vue'
 
 
 import { 
-  IonButtons, 
   IonContent, 
-  IonHeader, 
-  IonMenuButton, 
   IonPage, 
-  IonTitle,
   IonCard, 
   IonCardContent, 
   IonCardHeader, 
   IonCardSubtitle, 
   IonCardTitle,
-  IonToolbar,
-  IonImg,
-  IonLabel,
 } from '@ionic/vue';
 
 const groups= [
