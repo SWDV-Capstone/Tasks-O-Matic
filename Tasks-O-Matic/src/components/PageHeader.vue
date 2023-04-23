@@ -22,7 +22,7 @@ import {
   IonHeader, 
   IonToolbar,
   IonLabel,
-  // IonImg,
+  IonImg,
   IonButtons,
   IonMenuButton,
   IonTitle,

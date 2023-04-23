@@ -2,9 +2,13 @@ import { createRouter, createWebHistory } from '@ionic/vue-router';
 import { RouteRecordRaw } from 'vue-router';
 
 const routes: Array<RouteRecordRaw> = [
+  // {
+  //   path: '',
+  //   redirect: '/folder/Pages'
+  // },
   {
     path: '',
-    redirect: '/folder/Pages'
+    redirect: '/TaskGroups/TaskGroups'
   },
   {
     path: '/Groups/:id',
