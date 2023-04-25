@@ -1,17 +1,16 @@
 <template>
   <ion-header class="header" :translucent="true">
     <ion-toolbar>
-        <ion-img src="../favicon.png" style="max-width: 5%" slot="start" />
-        <ion-buttons slot="start">
-          <ion-menu-button color="primary"></ion-menu-button>
-        </ion-buttons>
+      <ion-img src="../favicon.png" style="max-width: 5%" slot="start" />
+      <ion-label slot="end">User's Name Here</ion-label>
+    </ion-toolbar>
 
-        <ion-label slot="end">User's Name Here</ion-label>
-      </ion-toolbar>
-
-      <ion-toolbar>
-        <ion-title>Your {{ $route.params.id }}</ion-title>
-      </ion-toolbar>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button color="primary"></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Your {{ $route.params.id }}</ion-title>
+    </ion-toolbar>
   </ion-header>
 </template>
 

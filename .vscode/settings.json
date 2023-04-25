@@ -1,4 +1,8 @@
 {
     "appService.defaultWebAppToDeploy": "undefined/subscriptions/c07e586d-f880-4c13-baa8-f4f58ce053f1/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/Tasks-O-Matic",
-    "appService.deploySubpath": "."
+    "appService.deploySubpath": ".",
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ]
 }
