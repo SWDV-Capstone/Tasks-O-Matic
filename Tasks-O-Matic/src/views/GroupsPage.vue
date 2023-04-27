@@ -4,22 +4,28 @@
 
     <ion-content>
 
-      <ion-card v-for="(g, i) in groups" :key="i">
+      <AddGroup @create-group="createGroup" />
+
+
+      <!-- <ion-card ref="groups" v-for="(g, i) in groups" :key="i">
         <ion-card-header>
           <ion-card-title>{{ g.title }}</ion-card-title>
           <ion-card-subtitle>{{ g.desc }}</ion-card-subtitle>
         </ion-card-header>
           <ion-card-content>
-              <!-- {{ g.somethingElse }} -->
+              {{ g.somethingElse }}
           </ion-card-content>
-      </ion-card>
+      </ion-card> -->
 
     </ion-content>
   </ion-page>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
+import { uid } from 'uid'
 import Header from '@/components/PageHeader.vue'
+import AddGroup from '@/components/AddGroup.vue'
 // import { groups } from '../stores/GroupsStore.js'
 
 
@@ -33,12 +39,28 @@ import {
   IonCardTitle,
 } from '@ionic/vue';
 
-const groups= [
-  {title: 'Group 1', desc: 'Group 1 Description'},
-  {title: 'Group 2', desc: 'Group 2 Description'},
-  {title: 'Group 3', desc: 'Group 3 Description'},
-  {title: 'Group 4', desc: 'Group 4 Description'},
-]
+const groupList = ref([]);
+
+const createGroup = (group) => {
+  groupList.value.push({
+    id: uid(),
+    group,
+    isCompleted: null,
+    isPriority: null,
+  });
+}
+
+// const groups = ref()
+// onMounted(() => {
+//   groups.value: []
+// })
+
+// const groups= [
+//   {title: 'Group 1', desc: 'Group 1 Description'},
+//   {title: 'Group 2', desc: 'Group 2 Description'},
+//   {title: 'Group 3', desc: 'Group 3 Description'},
+//   {title: 'Group 4', desc: 'Group 4 Description'},
+// ]
 </script>
 
 <style scoped>

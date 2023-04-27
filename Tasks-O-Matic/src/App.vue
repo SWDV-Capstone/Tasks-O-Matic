@@ -23,6 +23,7 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue';
 
 import {
   IonApp,
@@ -38,18 +39,17 @@ import {
   IonRouterOutlet,
   IonSplitPane,
 } from '@ionic/vue';
-import { ref } from 'vue';
 import {
-  archiveOutline,
-  archiveSharp,
-  heartOutline,
-  heartSharp,
+  // archiveOutline,
+  // archiveSharp,
+  // heartOutline,
+  // heartSharp,
   mailOutline,
   mailSharp,
-  paperPlaneOutline,
-  paperPlaneSharp,
-  trashOutline,
-  trashSharp,
+  // paperPlaneOutline,
+  // paperPlaneSharp,
+  // trashOutline,
+  // trashSharp,
 } from 'ionicons/icons';
 
 const selectedIndex = ref(0);

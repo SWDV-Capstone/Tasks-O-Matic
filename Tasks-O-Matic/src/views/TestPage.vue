@@ -1,33 +1,43 @@
 <template>
   <ion-page>
     <Header></Header>
-      <ion-content>Hello Test Page!
-        <p>{{ store.count }}</p>
+    <h1>Hello Test Page!</h1>
+      <ion-content>
+        <!-- <p>{{ store.count }}</p> -->
+        <!-- <AddGroup></AddGroup> -->
+        <div class="container">
+          <h1>Tasks</h1>
+          <!-- <ion-list v-for="task in tasks"> -->
+            <!-- <ion-item>{{ task }}</ion-item> -->
+          <!-- </ion-list> -->
+        </div>
+
       </ion-content>
   </ion-page>
 </template>
 
-<script setup lang="ts">
+<script lang="ts">
 import Header from '../components/PageHeader.vue'
-import { store } from '../stores/TestStore.js'
+// import { store } from '../stores/TestStore.js'
+// import AddGroup from '@/components/AddGroup.vue'
 
 import { 
-  IonButtons,
-  IonButton,
   IonContent, 
-  IonHeader, 
-  IonMenuButton, 
   IonPage, 
-  IonTitle,
-  IonCard, 
-  IonCardContent, 
-  IonCardHeader, 
-  IonCardSubtitle, 
-  IonCardTitle,
-  IonToolbar,
-  IonImg,
-  IonLabel,
 } from '@ionic/vue';
+
+export default{
+  data() {
+    return {
+      tasks: [
+        'Task 1',
+        'Task 2',
+        'Task 3',
+        'Task 4',
+      ],
+    };
+  }
+};
 
 // import { defineComponent, reactive } from 'vue';
 // import SimpleModal from '../components/SimpleModal.vue';
