@@ -2,7 +2,8 @@
   <ion-header class="header" :translucent="true">
     <ion-toolbar>
       <ion-img src="../favicon.png" style="max-width: 5%" slot="start" />
-      <ion-label slot="end">User's Name Here</ion-label>
+      <!-- <ion-label v-if="isActive" slot="end">ZZZ{{ userName }}MMM</ion-label> -->
+      <ion-label slot="end">Hello {{ userName }}</ion-label>
     </ion-toolbar>
 
     <ion-toolbar>
@@ -14,18 +15,29 @@
   </ion-header>
 </template>
 
-<script setup lang="ts">
+<script lang="ts">
 // import Header from '@/components/PageHeader.vue'
+import useUserState from '@/stores/useUserState'
+import { IonHeader, IonToolbar, IonLabel, IonImg, IonButtons, IonMenuButton, IonTitle } from '@ionic/vue';
 
-import { 
-  IonHeader, 
-  IonToolbar,
-  IonLabel,
-  IonImg,
-  IonButtons,
-  IonMenuButton,
-  IonTitle,
-} from '@ionic/vue';
+export default {
+  name: 'PageHeader',
+  components: { IonHeader, IonToolbar, IonLabel, IonImg, IonButtons, IonMenuButton, IonTitle },
+  setup: () => {
+    // Call users from stores
+    // const { state: userState, getIsActive } = useUserState();
+    const { state: userState } = useUserState();
+    const activeUser = userState.users.find(user => user.isActive === true);
+    // const { state: userState, getIsActive } = useUserState();
+    return { 
+      // users: userState.users,
+      // userName: userState.users[0].userName, // Current User
+      userName: activeUser ? activeUser.userName : '',
+      isActive: userState.users[0].isActive
+    }
+  }
+}
+
 </script>
 
 <style scoped>

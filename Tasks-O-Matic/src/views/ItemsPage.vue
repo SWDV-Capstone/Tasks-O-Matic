@@ -34,10 +34,10 @@ import {
 } from '@ionic/vue';
 
 const items= [
-  {title: 'Item 1', desc: 'Task Item 1 Description'},
-  {title: 'Item 2', desc: 'Task Item 2 Description'},
-  {title: 'Item 3', desc: 'Task Item 3 Description'},
-  {title: 'Item 4', desc: 'Task Item 4 Description'},
+  {id: 1, title: 'Item 1', desc: 'Task Item 1 Description'},
+  {id: 2, title: 'Item 2', desc: 'Task Item 2 Description'},
+  {id: 3, title: 'Item 3', desc: 'Task Item 3 Description'},
+  {id: 4, title: 'Item 4', desc: 'Task Item 4 Description'},
 ]
 </script>
   

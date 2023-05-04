@@ -7,7 +7,10 @@
             </ion-toolbar>
         </ion-header>
 
+        <!-- <user-login /> -->
+
         <ion-content>
+
             <ion-label>Enter Username and Password to Login</ion-label>
             <ion-list :inset="true">
                 <ion-textarea ref="input" fill="solid" style="font-weight: bold" label="Username" label-placement="floating"></ion-textarea>
@@ -15,26 +18,28 @@
                 <ion-textarea ref="input" fill="solid" style="font-weight: bold" label="Password" label-placement="floating"></ion-textarea>
                 <br/>
             </ion-list>
-                    <!-- helper-text="Enter Username" error-text="Invalid Username" @ion-blur="markTouched" -->
                 <ion-button>Login</ion-button>
                 <h6 style="font-weight: bold"><a href=https://www.google.com>Forgot Password?</a></h6>
-        </ion-content>
+        
+            </ion-content>
     </ion-page>
 </template>
 
-<script setup lang="ts">
-import {
-    IonContent,
-    IonTitle,
-    IonList,
-    IonLabel,
-    IonTextarea,
-    IonHeader,
-    IonPage,
-    IonToolbar,
-    IonButton,
-    IonImg,
-} from '@ionic/vue';
+<script lang="ts">
+// import UserLogin from '../components/UserLogin.vue';
+import { IonPage, IonContent, IonHeader, IonToolbar, IonImg, IonTitle, IonList, IonLabel, IonTextarea, IonButton } from '@ionic/vue';
+
+export default {
+    name: 'LoginPage',
+    components: { IonPage, IonContent, IonHeader, IonToolbar, IonImg, IonTitle, IonList, IonLabel, IonTextarea, IonButton },
+    // components: { UserLogin },
+    setup: () => {
+        return {
+            // UserLogin,
+        }
+    }
+}
+
 </script>
 
 <style scoped>

@@ -1,20 +1,11 @@
 <template>
   <ion-content class="AddGroup">
-
-    <section>
-      <div class="input-wrap">
-        <ion-input v-model="groupState.group" type="text" placeholder="Enter Name"></ion-input>
-        <ion-button @click="createGroup()" >Add Group</ion-button>
+      <ion-item>
+        <ion-input v-model="groupState.group" type="text" placeholder="Enter Group Name"></ion-input>
+        <ion-button @click="createGroup()" >Add</ion-button>
         <h3 v-show="groupState.invalid" class="err-msg">{{ groupState.errMsg }}</h3>
-      </div>
+      </ion-item>
       {{ groupState.group }}
-    </section>
-
-    <section>
-      <ion-list>
-        <!-- <ion-item v-for="group in groupList" :key="group">{{ groupList }}</ion-item> -->
-      </ion-list>
-    </section>
 
   </ion-content>
 </template>
@@ -25,9 +16,9 @@ import { reactive, defineEmits } from 'vue';
 
 import { 
   IonContent,
-  IonList,
   IonInput,
-  IonButton
+  IonButton,
+  IonItem
 } from '@ionic/vue';
 
 const emit = defineEmits([
