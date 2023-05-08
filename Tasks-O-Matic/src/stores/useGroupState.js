@@ -1,4 +1,4 @@
-import { reactive, readonly } from 'vue'
+import { reactive, computed, readonly } from 'vue'
 
 const defaultState = {
     groups: [
@@ -8,6 +8,7 @@ const defaultState = {
         {id: 4, title: 'Group D', desc: 'Group D Description'},
         {id: 5, title: 'Group E', desc: 'Group E Description'},
     ],
+    // count: 5,
 }
 
 const state = reactive(defaultState)
@@ -17,17 +18,29 @@ const getters = {}
 const actions = {
     addGroup(newGroup) {
         state.groups.unshift(newGroup)
+        // mutations.increase()
     },
     deleteGroup(group) {
         const index = state.groups.indexOf(group)
         if (index !== -1) {
             state.groups.splice(index, 1)
+            // mutations.decrease()
         }
     }
 }
+
+// const mutations = {
+//     increase() {
+//         state.count.value++;
+//     },
+//     decrease() {
+//         state.count.value--;
+//     }
+// };
 
 export default () => ({
     state: readonly(state),
     ...getters,
     ...actions,
+    // ...mutations,
 })

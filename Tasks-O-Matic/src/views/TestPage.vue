@@ -1,16 +1,19 @@
 <template>
   <ion-page>
     <Header></Header>
-      <h1>Hello Test Page!</h1>
+      <!-- <h1>Hello Test Page!</h1> -->
     <ion-content>
-      <group-list />
+      <!-- <group-list /> -->
+      <ItemList />
     </ion-content>
   </ion-page>
 </template>
 
 <script setup lang="ts">
 import Header from '../components/PageHeader.vue'
-import GroupList from '@/components/GroupList.vue'
+// import GroupList from '@/components/GroupList.vue'
+// import db from '../firebase/firebaseInit';
+import ItemList from '@/components/ItemList.vue';
 
 import { 
   IonContent, 

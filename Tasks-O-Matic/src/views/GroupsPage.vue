@@ -1,9 +1,11 @@
 <template>
   <ion-page>
     <Header></Header>
-    <!-- <add-group /> -->
+    <AddItem />
+      <!-- <add-group /> -->
     <ion-content>
-      <group-list />
+      <!-- <group-counter /> -->
+      <!-- <group-list /> -->
 
     </ion-content>
   </ion-page>
@@ -11,8 +13,11 @@
 
 <script setup lang="ts">
 import Header from '@/components/PageHeader.vue'
-import AddGroup from '@/components/AddGroup.vue'
-import GroupList from '@/components/GroupList.vue'
+// import AddGroup from '@/components/AddGroup.vue'
+// import GroupCounter from '@/components/GroupCounter.vue'
+// import GroupList from '@/components/GroupList.vue'
+import AddItem from '@/components/AddItem.vue';
+
 
 import { 
   IonContent, 

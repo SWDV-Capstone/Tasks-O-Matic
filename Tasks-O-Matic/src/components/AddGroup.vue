@@ -1,71 +1,55 @@
+<!-- This component will list all groups and add functionality -->
 <template>
-  <ion-content class="AddGroup">
-      <ion-item>
-        <ion-input v-model="groupState.group" type="text" placeholder="Enter Group Name"></ion-input>
-        <ion-button @click="createGroup()" >Add</ion-button>
-        <h3 v-show="groupState.invalid" class="err-msg">{{ groupState.errMsg }}</h3>
-      </ion-item>
-      {{ groupState.group }}
-
-  </ion-content>
+  <form @submit.prevent="onClickAddGroup()">
+    <ion-item>
+      <ion-label>Enter Group Name</ion-label>
+      <!-- <ion-input 
+          v-model="newGroup" 
+          class="input"
+          type="text" 
+          placeholder="Add Group"
+          ></ion-input> -->
+      <!-- <ion-input v-model="groupState.group.title"></ion-input> -->
+      <!-- <ion-input v-model="groupState.group"></ion-input> -->
+      <ion-button @click="onClickAddGroup()">Add</ion-button>
+    </ion-item>
+  </form>
 </template>
 
-<script setup lang="ts">
-// import AddGroup from '@/components/AddGroup.vue'
-import { reactive, defineEmits } from 'vue';
+<script lang="ts">
+import { ref } from 'vue';
+import useGroupState from '@/stores/useGroupState';
+import { IonItem, IonLabel, IonButton } from '@ionic/vue'
+// import { store } from '@/stores/TestStore';
 
-import { 
-  IonContent,
-  IonInput,
-  IonButton,
-  IonItem
-} from '@ionic/vue';
+export default {
+  name: 'AddGroup',
+  components: { IonItem, IonLabel, IonButton },
+  setup: () => {
+      // Groups store hook
 
-const emit = defineEmits([
-  'create-Group',
-])
-const groupState = reactive({
-  group: '',
-  invalid: false,
-  errMsg: '',
-})
+      const { state: groupState, addGroup } = useGroupState();
 
-const createGroup = () => {
-  groupState.invalid = false;
-  if (groupState.group !== '') {
-    emit('create-Group', groupState.group);
-    groupState.group = '';
-    return
+      const numberOfGroups = ref(groupState.groups.length);
+
+      const onClickAddGroup = () => {
+          addGroup({
+              id: groupState.groups.length + 1,
+              title: `Added Group ${groupState.groups.length + 1}`,
+              desc: ''
+          });
+          numberOfGroups.value += 1;
+      }
+
+      return {
+          groups: groupState.groups,
+          numberOfGroups,
+          onClickAddGroup,
+      }
   }
-    groupState.invalid = true;
-    groupState.errMsg = 'Please enter a group name';
-};
-
+}
 
 </script>
 
 <style scoped>
-ion-content.md {
-  --padding-start: 10px;
-  --padding-end: 10px;
-  --padding-top: 10px;
-  --padding-bottom: 10px;
-}
-ion-toolbar.md {
-  --padding-start: 10px;
-  --padding-end: 10px;
-  --padding-top: 10px;
-  --padding-bottom: 10px;
-}
-ion-content.ios {
-  --padding-start: 10px;
-  --padding-end: 10px;
-  --padding-top: 10px  
-  --padding-bottom: 10px;
-}
-ion-toolbar.ios {
-  --padding-start: 10px;
-  --padding-end: 10px;
-  --padding-top: 10px;
-  --padding-bottom: 10px;
-}</style>
+</style>

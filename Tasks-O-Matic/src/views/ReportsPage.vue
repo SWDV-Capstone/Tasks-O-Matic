@@ -1,11 +1,17 @@
 <template>
   <ion-page>
     <Header></Header>
+    <ion-card>
+      <!-- <ItemReports2 /> -->
+    </ion-card>
     <ion-content>
       <ion-card v-for="(r, i) in reports" :key="i">
         <ion-card-header>
           <ion-card-title>{{ r.title }}</ion-card-title>
           <ion-card-subtitle>{{ r.desc }}</ion-card-subtitle>
+          <IonCardContent>
+            <p>{{ r.value }}</p>
+          </IonCardContent>
         </ion-card-header>
 
         <ion-card-content>
@@ -18,6 +24,7 @@
 </template>
 
 <script setup lang="ts">
+// import ItemReports2 from '@/components/ItemReports2.vue';
 import Header from '@/components/PageHeader.vue'
 
 import { 
@@ -31,10 +38,10 @@ import {
 } from '@ionic/vue';
 
 const reports= [
-  {title: 'Report 1', desc: 'Report 1 Description'},
-  {title: 'Report 2', desc: 'Report 2 Description'},
-  {title: 'Report 3', desc: 'Report 3 Description'},
-  {title: 'Report 4', desc: 'Report 4 Description'},
+  {title: 'Allotted Hours Report', desc: 'Allotted hours left to complete', value: 20},
+  {title: 'Percent Complete Report', desc: 'Percent of Items Completed', value: 78},
+  {title: 'Items Overdue Report', desc: 'Number of Overdue Items', value: 9},
+  {title: 'Active Users report', desc: 'Who is the most active user', value: 'Andrew'},
 ]
 </script>
 
